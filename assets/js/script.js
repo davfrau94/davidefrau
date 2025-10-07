@@ -37,7 +37,7 @@ document.querySelectorAll('.fade-in').forEach(el => {
     observer.observe(el);
 });
         // Form submission
-document.getElementById('contact-form').addEventListener('submit', function(e) {
+document.getElementById('contact-form').addEventListener('submit', (e) => {
     e.preventDefault();        
         // Get form data
     const formData = new FormData(this);

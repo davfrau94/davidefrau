@@ -38,30 +38,7 @@ document.querySelectorAll('.fade-in').forEach(el => {
 });
         // Form submission
 document.getElementById('contact-form').addEventListener('submit', (e) => {
-    e.preventDefault();        
-        // Get form data
-    const formData = new FormData(e.target);
-    const name = formData.get('name');
-    const email = formData.get('email');
-    const subject = formData.get('subject');
-    const message = formData.get('message');        
-        // Simple form validation
-    if (!name || !email || !subject || !message) {
-        alert('Please fill in all fields.');
-        return;
-    }
-        
-        // Simulate form submission
-    const submitBtn = document.querySelector('.submit-btn');
-    const originalText = submitBtn.textContent;
     submitBtn.textContent = 'Sending...';
-    submitBtn.disabled = true;        
-    setTimeout(() => {
-        alert('Thank you for your message! I\'ll get back to you soon.');
-        e.target.reset();
-        submitBtn.textContent = originalText;
-        submitBtn.disabled = false;
-    }, 1500);
 });
 
         // Add specific hover effect for view all projects button

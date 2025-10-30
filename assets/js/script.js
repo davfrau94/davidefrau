@@ -40,7 +40,7 @@ document.querySelectorAll('.fade-in').forEach(el => {
 document.getElementById('contact-form').addEventListener('submit', (e) => {
     e.preventDefault();        
         // Get form data
-    const formData = new FormData(this);
+    const formData = new FormData(e.target);
     const name = formData.get('name');
     const email = formData.get('email');
     const subject = formData.get('subject');
@@ -58,7 +58,7 @@ document.getElementById('contact-form').addEventListener('submit', (e) => {
     submitBtn.disabled = true;        
     setTimeout(() => {
         alert('Thank you for your message! I\'ll get back to you soon.');
-        this.reset();
+        e.target.reset();
         submitBtn.textContent = originalText;
         submitBtn.disabled = false;
     }, 1500);
